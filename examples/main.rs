@@ -26,7 +26,7 @@ fn main() {
     println!("Now listening on localhost:8000");
 
     rouille::start_server("localhost:8000", move |request| {
-        let response = rouille::match_assets(&request, "examples/public");
+        let response = rouille::match_assets(&request, "public");
         if response.is_success() {
             return response;
         }
@@ -35,7 +35,7 @@ fn main() {
                 // The / route outputs an HTML client so that the user can try the websockets.
                 // Note that in a real website you should probably use some templating system, or
                 // at least load the HTML from a file.
-                let mut f = File::open("examples/home.html").unwrap();
+                let mut f = File::open("home.html").unwrap();
                 let mut s = String::new();
                 f.read_to_string(&mut s).unwrap();
                 Response::html(s)
