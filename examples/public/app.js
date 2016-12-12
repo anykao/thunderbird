@@ -3,11 +3,6 @@ $(function() {
   var msg = $("#msg")
   var log = $("#log")
 
-  function getURL() {
-    element = document.head.querySelector("meta[name='thunderbird-url']")
-    return element.getAttribute("content")
-  }
-
   function appendLog(msg) {
     var d = log[0]
     var doScroll = d.scrollTop == d.scrollHeight - d.clientHeight
@@ -31,7 +26,7 @@ $(function() {
     return false
   })
 
-  conn = Thunderbird.connect(getURL(), function (conn) {
+  conn = Thunderbird.connect("ws://localhost:8000/ws", function (conn) {
     conn.subscribe("room", function (msg) {
       appendLog($("<div/>").text(msg))
     })

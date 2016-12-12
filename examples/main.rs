@@ -42,6 +42,7 @@ fn main() {
             },
 
             (GET) (/ws) => {
+                println!("This is the websockets route");
                 // This is the websockets route.
 
                 // In order to start using websockets we call `websocket::start`.
