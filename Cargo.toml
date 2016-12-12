@@ -1,7 +1,26 @@
 [package]
-name = "thunderbird"
-version = "0.1.0"
-authors = ["meng.fanjun <xmeng.fanjun@contract.isid.co.jp>"]
+name = "rouille"
+version = "0.3.3"
+authors = ["Pierre Krieger <pierre.krieger1708@gmail.com>"]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/tomaka/rouille"
+documentation = "http://docs.rs/rouille"
+description = "High-level idiomatic web framework."
+readme = "README.md"
+keywords = ["web", "framework", "http", "rest"]
 
 [dependencies]
-rouille="*"
+chrono = "0.2.0"
+filetime = "0.1.10"
+multipart = { version = "0.5.1", default-features = false, features = ["server"] }
+rand = "0.3.11"
+rustc-serialize = "0.3"
+sha1 = "0.2.0"
+term = "0.2"
+time = "0.1.31"
+tiny_http = "0.5.6"
+url = "1.2"
+
+[dev-dependencies]
+mustache = "0.6"
+postgres = { version = "0.13", default-features = false }
